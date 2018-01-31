@@ -1,0 +1,29 @@
+{
+  "name": "blend-note-app",
+  "version": "1.0.0",
+  "description": "Blend Note Challenge v2",
+  "main": "index.js",
+  "scripts": {
+    "compile": "webpack --watch",
+    "server-dev": "nodemon server",
+    "start": "npm run compile & npm run server-dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Cosby",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "json-loader": "^0.5.7",
+    "nodemon": "^1.14.11",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
