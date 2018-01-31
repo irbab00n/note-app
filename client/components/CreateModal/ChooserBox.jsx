@@ -5,7 +5,8 @@ const style = {
     margin: '0 5px',
     height: '24px',
     width: '24px',
-    borderRadius: '2px'
+    borderRadius: '2px',
+    cursor: 'pointer'
   },
   selected: {
     border: '2px solid rgba(170, 177, 181, 1.0)'

@@ -60,10 +60,10 @@ export default class Button extends React.Component {
       margin = '0 0 0 0',  // Default margin of button is 0
       label = '',  // Default label is an empty string
       fontSize = '16px',  // Default font size is 16px
-      backgroundColor = 'rgba(86, 182, 191, 1.0)',  // Default background is a turquoise blue
-      hoverColor = 'rgba(56, 140, 148, 1.0)',  // Default slightly darker than the base color
-      clickedColor = 'rgba(42, 105, 111, 1.0)',  // Default slightly darker than the hover color
-      disabledColor = 'rgba(86, 182, 191, 0.5)', // Slightly opaque background color
+      backgroundColor = 'rgba(120, 170, 120, 1.0)',  // Default background is a turquoise blue
+      hoverColor = 'rgba(70, 150, 70, 1.0)',  // Default slightly darker than the base color
+      clickedColor = 'rgba(40, 120, 40, 1.0)',  // Default slightly darker than the hover color
+      disabledColor = 'rgba(120, 170, 120, 0.5)', // Slightly opaque background color
       color = 'rgba(255, 255, 255, 1.0)',  // Default text color if none provided
       disabled = false
     } = this.props;

@@ -15,7 +15,7 @@ const style = {
   titleFormat: {
     marginLeft: '100px',
     fontSize: '44px',
-    color: 'rgba(255, 59, 48, 1.0)',
+    color: 'rgba(249, 249, 251, 1.0)',
     WebkitUserSelect: 'none',
     khtmlUserSelect: 'none',
     MozUserSelect: 'none',
@@ -38,7 +38,7 @@ export default class Navbar extends React.Component {
 
       <div style={style.navbarBody}>
         <span style={style.titleFormat}>
-          KNOWTELY
+          Note-app
         </span>
         <Button
           height={'50px'}
