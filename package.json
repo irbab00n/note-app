@@ -4,9 +4,11 @@
   "description": "Note Card making application to help track to-do's, meeting notes, or anything else you need a handy note taking app to solve",
   "main": "index.js",
   "scripts": {
-    "compile": "webpack --watch",
+    "build": "webpack --mode production",
+    "compile": "webpack --mode development --watch",
     "server-dev": "nodemon server",
-    "start": "npm run compile & npm run server-dev",
+    "start-dev": "npm run compile & npm run server-dev",
+    "start": "npm run build & node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thomas Cosby",
@@ -18,7 +20,8 @@
     "babel-preset-react": "^6.24.1",
     "json-loader": "^0.5.7",
     "nodemon": "^1.14.11",
-    "webpack": "^3.10.0"
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
   },
   "dependencies": {
     "react": "^16.2.0",
