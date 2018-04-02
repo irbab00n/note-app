@@ -23,7 +23,7 @@ const style = {
 
 const ButtonBlock = (props) => {
 
-  const { disabled, modalCloser, addNotecard, actionIndex } = props;
+  const { disabled, closeModal, addNotecard, actionIndex } = props;
 
   let addSaveLabel = actionIndex === '' ? 'Add' : 'Save';
 
@@ -40,7 +40,7 @@ const ButtonBlock = (props) => {
           backgroundColor={'rgba(210, 211, 212, 1.0)'}
           hoverColor={'rgba(190, 191, 192, 1.0)'}
           clickedColor={'rgba(160, 161, 162, 1.0)'}
-          onClick={() => modalCloser('create')}
+          onClick={closeModal}
         />
 
         <Button 

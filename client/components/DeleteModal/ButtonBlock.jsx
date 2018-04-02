@@ -23,7 +23,7 @@ const style = {
 
 const ButtonBlock = (props) => {
 
-  const { modalCloser, confirmRemoval } = props;
+  const { closeModal, confirmRemoval } = props;
 
   return (
 
@@ -38,7 +38,7 @@ const ButtonBlock = (props) => {
           backgroundColor={'rgba(210, 211, 212, 1.0)'}
           hoverColor={'rgba(190, 191, 192, 1.0)'}
           clickedColor={'rgba(160, 161, 162, 1.0)'}
-          onClick={() => modalCloser('delete')}
+          onClick={closeModal}
         />
 
         <Button 

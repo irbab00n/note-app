@@ -52,7 +52,7 @@ const style = {
 
 const DeleteModal = (props) => {
 
-  const { modalCloser, confirmRemoval } = props;
+  const { closeModal, confirmRemoval } = props;
 
   return (
 
@@ -74,7 +74,7 @@ const DeleteModal = (props) => {
 
         <ButtonBlock
           confirmRemoval={confirmRemoval}
-          modalCloser={modalCloser}
+          closeModal={closeModal}
         />
 
       </div>

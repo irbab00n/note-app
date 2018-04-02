@@ -5,6 +5,8 @@ import Notecard from './components/Notecard/index.jsx';
 import CreateModal from './components/CreateModal/index.jsx';
 import DeleteModal from './components/DeleteModal/index.jsx';
 
+import defaultCards from './defaultCards';
+
 const style = {
   appBody: {
     height: '100%',
@@ -31,11 +33,11 @@ export default class App extends React.Component {
     this.state = {
       createModal: false,
       deleteModal: false,
-      notecards: [],
+      notecards: defaultCards,
       actionIndex: ''  // This value represents the index of the card either being edited or deleted
     };
     this.newCardOpener = this.newCardOpener.bind(this);
-    this.modalCloser = this.modalCloser.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.addNotecard = this.addNotecard.bind(this);
     this.updateNotecard = this.updateNotecard.bind(this);
     this.editNotecard = this.editNotecard.bind(this);
@@ -49,26 +51,21 @@ export default class App extends React.Component {
     });
   }
 
-  modalCloser(modalName) {
-    switch(modalName) {
-      case 'create':
-        this.setState({
-          createModal: false,
-          actionIndex: ''
-        });
-        break;
-      case 'delete':
-        this.setState({
-          deleteModal: false,
-          actionIndex: ''
-        });
-        break;
-    }
+  closeModal() {
+    // toggle off all modals, clear the action index
+    this.setState({
+      createModal: false,
+      deleteModal: false,
+      actionIndex: ''
+    });
   }
 
   updateNotecard(index, card) {
+    // create a new copy of the notecards
     let notecards = this.state.notecards.slice(0);
+    // overwrite the card at the provided index, with the supplied card
     notecards[index] = card;
+    // close the createModal, update the notecards, and clear the actionIndex
     this.setState({
       createModal: false,
       notecards,
@@ -77,7 +74,9 @@ export default class App extends React.Component {
   }
 
   addNotecard(card) {
+    // create a copy of the array and place the card coming in at the beginning
     let notecards = [card].concat(this.state.notecards.slice(0));
+    // close the createModal and set the notecards
     this.setState({
       createModal: false,
       notecards
@@ -85,6 +84,7 @@ export default class App extends React.Component {
   }
 
   editNotecard(index) {
+    // set the action index representing the index of the card being edited and open the createModal
     this.setState({
       actionIndex: index,
       createModal: true
@@ -92,6 +92,7 @@ export default class App extends React.Component {
   }
 
   removeNotecard(index) {
+    // set the action index representing the index of the card being removed and open the deleteModal
     this.setState({
       actionIndex: index,
       deleteModal: true
@@ -111,6 +112,8 @@ export default class App extends React.Component {
   render() {
 
     const { createModal, deleteModal, notecards, actionIndex } = this.state;
+
+    console.log(notecards);
 
     return (
 
@@ -147,7 +150,7 @@ export default class App extends React.Component {
               notecards={notecards}
               addNotecard={this.addNotecard}
               updateNotecard={this.updateNotecard}
-              modalCloser={this.modalCloser}
+              closeModal={this.closeModal}
               actionIndex={actionIndex}
             /> :
             <div></div>  // stub with empty div
@@ -156,7 +159,7 @@ export default class App extends React.Component {
         {
           deleteModal ?
             <DeleteModal
-              modalCloser={this.modalCloser}
+              closeModal={this.closeModal}
               confirmRemoval={this.confirmRemoval}
             /> :
             <div></div>  // stub with empty div

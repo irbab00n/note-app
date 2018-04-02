@@ -145,7 +145,7 @@ export default class CreateModal extends React.Component {
   render() {
 
     const { currentColor, title, notes, edited } = this.state;
-    const { modalCloser, actionIndex } = this.props;
+    const { closeModal, actionIndex } = this.props;
 
     let disableButton = title === '' || notes === '';
 
@@ -181,7 +181,7 @@ export default class CreateModal extends React.Component {
           <ButtonBlock
             actionIndex={actionIndex}
             disabled={!edited || disableButton}
-            modalCloser={modalCloser}
+            closeModal={closeModal}
             addNotecard={this.buildNotecard}
           />
 
