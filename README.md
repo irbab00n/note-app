@@ -2,7 +2,7 @@
 
 This application was designed as an exercise to create a responsive grid featuring cards that you can create and edit.
 
-Currently deployed at https://sheltered-crag-55002.herokuapp.com/
+Currently deployed at http://note-app-tc.herokuapp.com/
 
 ---
 
